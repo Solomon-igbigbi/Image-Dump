@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+    color: red;
+}
+
+
+
+.main {
+    height: 80vh;
+    background-image: url('../img/body2.jpg');
+    background-size: cover;
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+    
+        img {
+            padding: 20px;
+            height: 60px;
+        }
+    
+    
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+    
+            li {
+                list-style: none;
+                
+                :hover {
+                    color: red;
+                }
+
+                a {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+    
+            .nav-item {
+                padding: 20px;
+            }
+
+        }
+
+        a {      
+            button {
+                padding: 10px;
+                width: 120px;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                background: red;
+                font-size: 15px;
+
+                
+            }
+
+            :hover {
+                    background-color: transparent;
+                    border: red 1px solid;
+                    color: red;
+            }
+        }
+        
+    }
+
+    .searchBar {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+        height: 60vh;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            margin-bottom: 60px;
+            font-size: 50px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            border: red solid 1px;
+            margin-bottom: 30px;
+        }
+
+        span {
+            font-style: italic;
+        }
+    }
+}
