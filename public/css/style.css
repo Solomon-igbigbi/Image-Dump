@@ -28,6 +28,10 @@ a:link {
   padding-top: 10px;
 }
 
+.main .navbar .nav-image :hover {
+  border: none;
+}
+
 .main .navbar img {
   padding: 20px;
   height: 60px;
@@ -73,6 +77,7 @@ a:link {
   background-color: transparent;
   border: red 1px solid;
   color: red;
+  cursor: pointer;
 }
 
 .main .searchBar {
