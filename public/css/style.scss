@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+
+$primary-color: #B4161B;
+$secondary-color: #FFFFFF;
+$tetiary-color: black;
+$primary-font: 'Poppins', sans-serif;
 
 * {
     margin: 0px;
@@ -6,7 +14,20 @@
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: $primary-font
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    margin-right: 20px;
+    scroll-margin-left: 10px;
+} 
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: white;
+    
+    
 }
 
 a:link {
@@ -14,17 +35,19 @@ a:link {
     color: red;
 }
 
-
-
-.main {
-    height: 80vh;
-    background-image: url('../img/body2.jpg');
-    background-size: cover;
-
-    .navbar {
+.navbar {
+    
+    // padding-top: 10px;
+    width: 100%;
+    background-color: $secondary-color;
+    position: sticky;
+    z-index: 1;
+    
+    .nav-area {
         display: flex;
-        justify-content: space-around;
-        padding-top: 10px;
+        justify-content: space-between;
+        width: 70%;
+        margin: auto;
 
         .nav-image {
             :hover {
@@ -34,81 +57,139 @@ a:link {
     
         img {
             padding: 20px;
-            height: 60px;
-
+            height: 30px;
+            width: 60;
+            margin-right: 70%;
+    
         }
     
     
         ul {
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
     
             li {
                 list-style: none;
+                color: $secondary-color;
                 
-                :hover {
-                    color: red;
-                }
-
+           
+    
                 a {
-                    color: black;
+                    color: $tetiary-color;
                     font-weight: bold;
+                    padding-right: 17px;
+    
+                    :hover {
+                        // border: $secondary-color 1px solid;
+                        text-decoration: underline;
+                    }
                 }
             }
     
             .nav-item {
                 padding: 20px;
             }
-
+    
         }
-
-        a {      
+    
+        a {    
+    
             button {
                 padding: 10px;
                 width: 120px;
                 border: none;
                 border-radius: 5px;
-                color: white;
-                background: red;
+                color: $secondary-color;
+                background: $tetiary-color;
                 font-size: 15px;
-
+                font-weight: bold;
+    
                 
             }
-
+    
             :hover {
                     background-color: transparent;
-                    border: red 1px solid;
-                    color: red;
+                    border: $tetiary-color 1px solid;
+                    color: $tetiary-color;
                     cursor: pointer;
+                    
             }
         }
-        
     }
+    
+    
+}
 
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.main {
+    height: 80vh;
+    background-color: rgba(19,20,24, 0.9    );
+    width: 100%;
+    position: absolute;
+
+
+
+    
     .searchBar {
         display: flex;
         flex-direction: column;
         width: 50%;
         margin: auto;
+        margin-top: 70px;
         height: 60vh;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
 
+        
+        
         h1 {
-            margin-bottom: 60px;
-            font-size: 50px;
+            margin-bottom: 10px;
+            font-size: 45px;
+            color: 	$secondary-color;
         }
 
         input {
             width: 100%;
             padding: 15px;
             border-radius: 6px;
-            border: red solid 1px;
             margin-bottom: 30px;
         }
 
         span {
-            font-style: italic;
+            color: white;
+            margin-bottom: 40px;
+            width: 50%;
         }
+    }
+}
+
+
+.overlay {
+    height: 80vh;
+    width: 100%;
+    background-image: url('../img/body1.jpg');
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.images-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: ;
+    gap: 20px 5px;
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+
+    img {
+        width: 400px;
     }
 }

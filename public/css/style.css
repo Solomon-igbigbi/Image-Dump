@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 * {
   margin: 0px;
   padding: 0px;
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  margin-right: 20px;
+  scroll-margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: white;
 }
 
 a:link {
@@ -13,71 +25,96 @@ a:link {
   color: red;
 }
 
-.main {
-  height: 80vh;
-  background-image: url("../img/body2.jpg");
-  background-size: cover;
+.navbar {
+  width: 100%;
+  background-color: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
 }
 
-.main .navbar {
+.navbar .nav-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-top: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+  margin: auto;
 }
 
-.main .navbar .nav-image :hover {
+.navbar .nav-area .nav-image :hover {
   border: none;
 }
 
-.main .navbar img {
+.navbar .nav-area img {
   padding: 20px;
-  height: 60px;
+  height: 30px;
+  width: 60;
+  margin-right: 70%;
 }
 
-.main .navbar ul {
+.navbar .nav-area ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main .navbar ul li {
+.navbar .nav-area ul li {
   list-style: none;
+  color: #FFFFFF;
 }
 
-.main .navbar ul li :hover {
-  color: red;
-}
-
-.main .navbar ul li a {
+.navbar .nav-area ul li a {
   color: black;
   font-weight: bold;
+  padding-right: 17px;
 }
 
-.main .navbar ul .nav-item {
+.navbar .nav-area ul li a :hover {
+  text-decoration: underline;
+}
+
+.navbar .nav-area ul .nav-item {
   padding: 20px;
 }
 
-.main .navbar a button {
+.navbar .nav-area a button {
   padding: 10px;
   width: 120px;
   border: none;
   border-radius: 5px;
-  color: white;
-  background: red;
+  color: #FFFFFF;
+  background: black;
   font-size: 15px;
+  font-weight: bold;
 }
 
-.main .navbar a :hover {
+.navbar .nav-area a :hover {
   background-color: transparent;
-  border: red 1px solid;
-  color: red;
+  border: black 1px solid;
+  color: black;
   cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.main {
+  height: 80vh;
+  background-color: rgba(19, 20, 24, 0.9);
+  width: 100%;
+  position: absolute;
 }
 
 .main .searchBar {
@@ -90,29 +127,56 @@ a:link {
           flex-direction: column;
   width: 50%;
   margin: auto;
+  margin-top: 70px;
   height: 60vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .main .searchBar h1 {
-  margin-bottom: 60px;
-  font-size: 50px;
+  margin-bottom: 10px;
+  font-size: 45px;
+  color: #FFFFFF;
 }
 
 .main .searchBar input {
   width: 100%;
   padding: 15px;
   border-radius: 6px;
-  border: red solid 1px;
   margin-bottom: 30px;
 }
 
 .main .searchBar span {
-  font-style: italic;
+  color: white;
+  margin-bottom: 40px;
+  width: 50%;
+}
+
+.overlay {
+  height: 80vh;
+  width: 100%;
+  background-image: url("../img/body1.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+}
+
+.images-display {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 20px 5px;
+  width: 70%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.images-display img {
+  width: 400px;
 }
 /*# sourceMappingURL=style.css.map */
