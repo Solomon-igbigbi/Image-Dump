@@ -40,6 +40,62 @@ border-radius: 6px;
 border: 3px solid var(--scrollbarBG);
 }
 
+.body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: $tetiary-color;
+    height: 100%;
+
+    div {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 50px;
+        
+
+        img {
+            padding: 0px;
+            padding-bottom: 50px;
+            width: 240px;
+            height: 60px;
+        }
+
+        span {
+            color: $secondary-color;
+        }
+    }
+}
+
+.form-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .spans {
+        text-align: center;
+
+        span {
+            margin: 40px 0px 40px 0px;
+
+            a {
+                i {
+                    font-size: 25px;
+                    padding: 10px;
+                    padding-top: 5px;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
 img {
     padding: 20px;
     height: 40px;
@@ -53,10 +109,11 @@ form {
     align-items: center;
     justify-content: center;
     height: 60vh;
-    width: 22%;
+    width: 45%;
     margin: auto;
     box-shadow: 0px 0px 10px $input-background;
     border-radius: 20px;
+    margin-bottom: 40px;
 
     h1 {
         margin-bottom: 25px;
