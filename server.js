@@ -1,11 +1,21 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose')
 const routes = require("./routes/routes");
 const path = require("path");
 const bodyParser = require("body-parser");
 
 
 const port = 3000;
+
+mongoose.connect('mongodb://localhost/imageDump', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+}, () => {
+  console.log('connected to mongoDB')
+});
 
 app.set("views", path.join(__dirname, "views")); // this is the folder where we keep our pug files
 app.set("view engine", "ejs"); // we use the engine pug, mustache or EJS work great too
