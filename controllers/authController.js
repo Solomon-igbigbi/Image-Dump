@@ -15,3 +15,4 @@ exports.signUp = (req, res) => {
     console.log(User)
     res.redirect("/")
 }
+
