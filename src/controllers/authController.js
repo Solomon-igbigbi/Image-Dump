@@ -2,6 +2,8 @@ const { User } = require('../models/User');
 const { validateUser } = require('../validators/registerValidation');
 const { validateLogin } = require('../validators/loginValidation');
 const bcrypt = require('bcrypt')
+const authToken = require('../middlewares/getAuthToken')
+
 
 exports.register =  (req, res) => {
     res.render("register");
@@ -15,7 +17,7 @@ exports.signUp = async (req, res) => {
     const { error }  =  validateUser(req.body);
     if(error) return res.status(400).send(error.details[0].message);
 
-    let user = await User.findOne(req.body.email);
+    let user = await User.findOne({ email: req.body.email} );
     console.log(user)
     if (user) return res.status(400).send('user already registered')
 
@@ -35,7 +37,7 @@ exports.signUp = async (req, res) => {
 }
 
 exports.signIn = async (req, res) => {
-    const { error }  =  validateLogin({email : loginUser.email});
+    const { error }  =  validateLogin({email : req.body.email});
     if(error) return res.status(400).send(error.details[0].message);
 
     let user = await User.findOne({ email: req.body.email});
@@ -45,7 +47,7 @@ exports.signIn = async (req, res) => {
     let userValidation = await bcrypt.compare(req.body.password, user.password);
     if(!userValidation) return res.status(400).send('invalid email or password');
 
-
-    res.send('successfully logged in');
+    const token = authToken({ _id: user._id, email: user.email})
+    res.header('x-auth-token', token).send(token);
 }
 
