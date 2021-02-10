@@ -48,6 +48,11 @@ exports.signIn = async (req, res) => {
     if(!userValidation) return res.status(400).send('invalid email or password');
 
     const token = authToken({ _id: user._id, email: user.email})
-    res.header('x-auth-token', token).send(token);
+    console.log(token)
+    
+    res.header('x-auth-token', token)
+    // console.log(res.header())
+    res.redirect("/");
+
 }
 
